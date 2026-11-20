@@ -10,7 +10,9 @@
 
 :root {
 	/* Width of the Author column. To change it, set this variable in your
-	   style's own stylesheet rather than here, so updates keep the change. */
+	   style's own stylesheet rather than here, so updates keep the change.
+	   This file loads after the style's stylesheet, so use a selector that
+	   outranks :root there, for example html:root. */
 	--authorcolumn-width: 150px;
 }
 
