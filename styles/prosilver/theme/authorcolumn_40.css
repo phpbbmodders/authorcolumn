@@ -1,0 +1,10 @@
+/**
+ * Author Column extension for the phpBB Forum Software package
+ *
+ * phpBB 4.0's prosilver uses larger text in the topic list, so the column
+ * needs more room for a username of phpBB's default 20-character maximum.
+ */
+
+:root {
+	--authorcolumn-width: 190px;
+}

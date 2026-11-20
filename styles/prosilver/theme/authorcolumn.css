@@ -1,0 +1,68 @@
+/**
+ * Author Column extension for the phpBB Forum Software package
+ *
+ * Author column in forum topic lists and topic search results. One file for
+ * phpBB 3.3 and 4.0: the column only shows on screens wider than 950px, where
+ * both branches use the same 440px of side columns, so their different phone
+ * breakpoints never meet these rules. authorcolumn_40.css widens the column
+ * for phpBB 4.0's larger text.
+ */
+
+:root {
+	/* Width of the Author column. To change it, set this variable in your
+	   style's own stylesheet rather than here, so updates keep the change. */
+	--authorcolumn-width: 150px;
+}
+
+dd.author {
+	width: var(--authorcolumn-width);
+	font-size: 1.1em;
+	font-size: var(--ps-font-small, 1.1em);
+	line-height: 2.5em;
+}
+
+dd.author > span {
+	display: block;
+	overflow: hidden;
+	padding-left: 5px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+/* Username links are inline-block in prosilver, which stops the ellipsis */
+dd.author > span a {
+	display: inline;
+}
+
+/* Make room for the column: prosilver's 440px of side columns plus its width */
+@media (min-width: 951px) {
+	ul.topiclist.author-column dt {
+		margin-right: calc(-440px - var(--authorcolumn-width));
+	}
+
+	ul.topiclist.author-column dt .list-inner {
+		margin-right: calc(440px + var(--authorcolumn-width));
+	}
+
+	.rtl ul.topiclist.author-column dt {
+		margin-right: 0;
+		margin-left: calc(-440px - var(--authorcolumn-width));
+	}
+
+	.rtl ul.topiclist.author-column dt .list-inner {
+		margin-right: 0;
+		margin-left: calc(440px + var(--authorcolumn-width));
+	}
+
+	.rtl dd.author > span {
+		padding-right: 5px;
+		padding-left: 0;
+	}
+}
+
+/* Narrower screens: hide the column so topic titles keep their room */
+@media (max-width: 950px) {
+	ul.topiclist.author-column dd.author {
+		display: none;
+	}
+}
