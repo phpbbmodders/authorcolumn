@@ -8,10 +8,25 @@ Adds an Author column to forum topic lists and topic search results in prosilver
 
 - An **Author** column between the topic title and **Replies**, showing who started each topic, in their group colour.
 - Shown in forum topic lists (announcements and normal topics) and in topic search results, including **Active topics**, **Unanswered topics** and searches by author. Post-mode search results and the forum list are unchanged.
-- Hidden on screens 950px wide or narrower, where the topic titles need the room; the "by author" line under each title still shows there.
-- Usernames too long for the column end in "…". The column is 150px wide on phpBB 3.3 and 190px on phpBB 4.0, whose topic list uses larger text. To change it, set `--authorcolumn-width` in your style's stylesheet.
+- Hidden on screens 950px wide or narrower, where the topic titles need the room; down to prosilver's phone layout, the "by author" line under each title still shows there.
+- Usernames too long for the column end in "…". The column is 150px wide on phpBB 3.3 and 190px on phpBB 4.0, whose topic list uses larger text. To change it, set `--authorcolumn-width` in your style's stylesheet with `html:root` as the selector, for example `html:root { --authorcolumn-width: 170px; }`: a plain `:root` there loses to the extension's stylesheet, which loads later.
 - Works with right-to-left languages.
 - No settings: enable the extension and the column appears.
+
+## Screenshots
+
+<table>
+<tr>
+<td><a href="docs/images/screenshots/authorcolumn-viewforum.png"><img src="docs/images/screenshots/authorcolumn-viewforum.png" width="440" height="235" alt="Author column in a forum's topic list"></a><br>A forum's topic list</td>
+<td><a href="docs/images/screenshots/authorcolumn-search.png"><img src="docs/images/screenshots/authorcolumn-search.png" width="440" height="247" alt="Author column in the Active topics search results"></a><br>Active topics search results</td>
+</tr>
+<tr>
+<td><a href="docs/images/screenshots/authorcolumn-viewforum-phone.png"><img src="docs/images/screenshots/authorcolumn-viewforum-phone.png" width="200" height="433" alt="The same forum on a phone, without the Author column"></a><br>On a phone, the column is hidden</td>
+<td></td>
+</tr>
+</table>
+
+Click an image for the full size. Captions and details: [screenshot gallery](docs/images/screenshots/README.md).
 
 ## How it works
 
