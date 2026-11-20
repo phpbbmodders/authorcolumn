@@ -24,7 +24,7 @@ phpBB has no template event inside the topic list's heading row, or between the 
 The copies are generated from phpBB's source by [`tools/build_templates.py`](tools/build_templates.py). When prosilver's templates change in a phpBB release, rebuild them, for example:
 
 ```bash
-tools/build_templates.py -p ~/phpbb -3 release-3.3.19 -4 origin/master
+python3 tools/build_templates.py -p ~/phpbb -3 release-3.3.19 -4 origin/master
 ```
 
 ## Requirements
